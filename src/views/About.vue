@@ -2,19 +2,19 @@
   <div class="about">
     <h1>This is an about page</h1>
     <ul>
-      <li>SVG ICON : <svg-icon icon-class="check"/></li>
+      <li>SVG ICON : <svg-icon icon-class="check" /></li>
       <li>Version : {{ version }}</li>
       <li>BUILD_CONFIG : {{ BUILD_CONFIG }}</li>
       <li>BASE_API : {{ BASE_API }}</li>
+      <li>map getter test : {{ appTest }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import { mapGetters } from 'vuex'
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
   },
   data() {
@@ -24,5 +24,8 @@ export default {
       BASE_API: process.env.BASE_API
     }
   },
+  computed: {
+    ...mapGetters(['appTest'])
+  }
 }
 </script>
