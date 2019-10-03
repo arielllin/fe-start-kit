@@ -1,4 +1,4 @@
-# mxfe-start-kit
+# mxfe-start-kit (with mock server)
 
 ## Project setup
 ```
@@ -20,5 +20,8 @@ npm run build:prod
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### mock api server ( port 3889 )
+```
+cd server
+npm run start
+```

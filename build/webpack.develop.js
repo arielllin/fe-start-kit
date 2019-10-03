@@ -3,7 +3,7 @@
  */
 module.exports = {
   configureWebpack: {
-    devtool: 'source-map',
+    devtool: 'source-map'
   },
   devServer: {
     host: '0.0.0.0',
@@ -11,16 +11,16 @@ module.exports = {
     https: false,
     open: true,
     hotOnly: true,
-    // proxy: 'http://localhost:8000'
-    proxy: {
-      '/some-api': {
-        target: 'http://some.api-server.com',
-        changeOrigin: true
-      },
-      '/another-api': {
-        target: 'http://some.api-server.com',
-        changeOrigin: true
-      },
-    }
+    proxy: 'http://localhost:3889'
+    // proxy: {
+    //   '/': {
+    //     target: 'http://some.api-server.com',
+    //     changeOrigin: true
+    //   },
+    //   '/another-api': {
+    //     target: 'http://some.api-server.com',
+    //     changeOrigin: true
+    //   },
+    // }
   }
-};
+}

@@ -5,6 +5,7 @@ import router from './router'
 
 import './assets/icons/index'
 import i18n from './lang' // Internationalization
+import './permission' // permission control
 
 Vue.config.productionTip = false
 

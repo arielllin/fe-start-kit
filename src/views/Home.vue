@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Vue logo" src="../assets/images/logo.png">
     <HelloWorld msg="聞人雅士 vue cli 3.11.0 腳手架你派" />
 
     <h6>--save</h6>
