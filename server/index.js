@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
 app.post('/login', function(req, res) {
   console.log('req.body', req.body)
   const { username, password } = req.body
-  if (username === 'gucci' && password === '123456') {
+  if (username === 'test' && password === '123456') {
     res.json({
       username,
       token: 'rx237482jjqqa'

@@ -1,5 +1,7 @@
 <template>
-  <div>Help</div>
+  <div>
+    <div> This is an Help page</div>
+  </div>
 </template>
 
 <script>

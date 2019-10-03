@@ -6,10 +6,7 @@ import { getLoginStatus } from '@/utils/auth' // getToken from cookie
 import { whiteList } from '@/utils/constant'
 
 router.beforeEach((to, from, next) => {
-  console.log('getLoginStatus', getLoginStatus())
-
   next()
-
   // if (getLoginStatus() === 'true') {
   // if (!to.matched.length) {
   //   next({ path: '/404' })

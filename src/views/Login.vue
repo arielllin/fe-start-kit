@@ -3,7 +3,7 @@
     <template v-if="!loginStatus">
       <form>
         <div>Try it:</div>
-        <div>username: gucci</div>
+        <div>username: test</div>
         <div>password: 123456</div>
         <p>
           <label for="username">username </label>

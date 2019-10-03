@@ -56,48 +56,32 @@ const login = {
     // }
   },
   actions: {
-    PostLogin({ commit }, auth) {
-      return new Promise((resolve, reject) => {
-        loginApi(auth)
-          .then((data) => {
-            console.log('loginApi data', data)
-            commit('SET_LOGIN_STATUS', true)
-            commit('SET_TOKEN', data.token)
-            setToken(data.token)
-            setLoginStatus(true)
-            // setExpireIn(expireIn)
-            resolve()
-          })
-          .catch(error => {
-          // if (error.code === '201-020002') {
-          //   commit('SET_ERROR_COUNT', error.data.errorCount)
-          // }
-          // if (error.code === '201-020004') {
-          //   commit('SET_ACCOUNT_LOCK', { isLock: true, accountName: loginForm.accountName })
-          // }
-            alert(error)
-            reject(error)
-          })
-      })
+    async PostLogin({ commit }, auth) {
+      try {
+        const data = await loginApi(auth)
+        commit('SET_LOGIN_STATUS', true)
+        commit('SET_TOKEN', data.token)
+        setToken(data.token)
+        setLoginStatus(true)
+        // setExpireIn(expireIn)
+        return data
+      } catch (error) {
+        alert(error)
+        throw error
+      }
     },
-    PostLogOut({ commit, dispatch, state }) {
-      return new Promise((resolve, reject) => {
-        logout({ token: state.token })
-          .then(() => {
-            commit('SET_LOGIN_STATUS', false)
-            commit('SET_TOKEN', '')
-            removeLoginStatus()
-            removeToken()
-            // commit('SET_EXPIRE_IN', '')
-            // removeExpireIn()
-            // removeMarqueeUid()
-            resolve()
-          })
-          .catch(error => {
-            alert(error)
-            reject()
-          })
-      })
+    async PostLogOut({ commit, dispatch, state }) {
+      try {
+        const data = await logout({ token: state.token })
+        commit('SET_LOGIN_STATUS', false)
+        commit('SET_TOKEN', '')
+        removeLoginStatus()
+        removeToken()
+        return data
+      } catch (error) {
+        alert(error)
+        throw error
+      }
     }
   }
 }
