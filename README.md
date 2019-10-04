@@ -1,5 +1,7 @@
 # mxfe-start-kit (with mock server)
 
+資料夾結構檔案請參考 directoryList.md
+
 ## Project setup
 ```
 npm install
@@ -25,3 +27,5 @@ npm run lint
 cd server
 npm run start
 ```
+
+
