@@ -1,0 +1,45 @@
+import { {{ camelCase requireName }}Request as request } from '@/utils/http'
+
+// Create
+export function create(form) {
+  return request({
+    url: '/path',
+    method: 'post',
+    data: form
+  })
+}
+
+// Read all
+export function findAll() {
+  return request({
+    url: '/path',
+    method: 'get'
+  })
+}
+
+// Read one
+export function find({ id }) {
+  return request({
+    url: `/path/${id}`,
+    method: 'get'
+  })
+}
+
+// Update
+export function update(id, form) {
+  return request({
+    url: `/path/${id}`,
+    method: 'put',
+    data: form
+  })
+}
+
+// Delete
+export function remove(id, form) {
+  return request({
+    url: `/path/${id}`,
+    method: 'delete',
+    data: form
+  })
+}
+

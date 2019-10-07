@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/images/logo.png">
-    <HelloWorld msg="聞人雅士 vue cli 3.11.0 腳手架你派" />
+    <img alt="Vue logo" :src="logo">
+    <h1>聞人雅士 vue cli 3.11.0 腳手架你派</h1>
 
     <h6>--save</h6>
     <div>vuex</div>
@@ -18,17 +18,14 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+const logo = '@/assets/images/logo.png'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  },
   data() {
     return {
-      version: `V ${process.env.VERSION}`
+      version: `V ${process.env.VERSION}`,
+      logo
     }
   }
 }
