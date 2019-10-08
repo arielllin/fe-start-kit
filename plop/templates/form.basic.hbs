@@ -1,0 +1,12 @@
+export default class {{ properCase name }}Form {
+  property = null
+
+  constructor(p) {
+    this.property = p
+  }
+
+  static createBasic({ property }) {
+    return new {{ properCase name }}Form(property)
+  }
+}
+

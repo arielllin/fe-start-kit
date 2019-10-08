@@ -19,3 +19,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Component generator, open those when you start a new project
+# /plop
+# plopfile.js

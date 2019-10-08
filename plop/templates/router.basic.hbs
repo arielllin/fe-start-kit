@@ -1,0 +1,9 @@
+export default {
+  path: '/{{ camelCase name }}',
+  name: '{{ properCase name }}',
+  component: () => import(/* webpackChunkName: "{{ camelCase name }}" */ '@/views/{{ camelCase name }}'),
+  meta: {
+    i18n: '{{ properCase name }}'
+  },
+  children: []
+};
