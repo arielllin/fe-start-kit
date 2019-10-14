@@ -3,10 +3,10 @@ const path = require('path')
 const envConfigVariable = process.env.ENV_CONFIG || 'production'
 const envConfig = require(`./config/${envConfigVariable}.env`)
 
-console.log("Start to build...")
+console.log('Start to build...')
 console.log(`Information -  by config "${envConfigVariable}".`, envConfig)
 
-const exportConfig = merge(require(`./build/webpack.${envConfig.BUILD_CONFIG}`),{
+const exportConfig = merge(require(`./build/webpack.${envConfig.BUILD_CONFIG}`), {
   /**
    * 链式操作 (高级)
    * 可参考
@@ -15,9 +15,9 @@ const exportConfig = merge(require(`./build/webpack.${envConfig.BUILD_CONFIG}`),
   chainWebpack: config => {
     // -- 设定html template / VERSION 参数 --
     config.plugin('define').tap(definitions => {
-      Object.assign(definitions[0]['process.env'], envConfig);
+      Object.assign(definitions[0]['process.env'], envConfig)
       definitions[0]['process.env'].BUILD_CONFIG = `"${definitions[0]['process.env'].BUILD_CONFIG}"`
-      return definitions;
+      return definitions
     })
 
     // -- 重新設定svg loader --
@@ -33,6 +33,12 @@ const exportConfig = merge(require(`./build/webpack.${envConfig.BUILD_CONFIG}`),
       .options({
         symbolId: 'icon-[name]'
       })
+    config.module
+      .rule('markdown')
+      .test(/\.md?$/)
+      .use('babel-loader')
+      .loader('raw-loader')
+      .end()
 
     // -- 指定不同挡案的 stylus loader 设定--
     // config.module.rule('stylus').oneOf('vue')
@@ -59,7 +65,7 @@ const exportConfig = merge(require(`./build/webpack.${envConfig.BUILD_CONFIG}`),
     //     'import': [path.join(__dirname, '.', 'src/styles/index.styl')],
     //     'resolve url': true
     //   })
-  },
+  }
   // -- svg-sprite-loader此规则在此会被原 file-loader 拦截走 --
   // module: {
   //   rules: [
@@ -74,21 +80,6 @@ const exportConfig = merge(require(`./build/webpack.${envConfig.BUILD_CONFIG}`),
   //   ]
   // }
   // },
-  css: {
-    loaderOptions: {
-      stylus: {
-        import: [path.join(__dirname, '.', 'src/styles/var/index.styl')],
-        'resolve url': true
-      }
-    }
-  },
-  pluginOptions: {
-    'cube-ui': {
-      postCompile: true,
-      theme: false
-    }
-  },
-  transpileDependencies: ["mand-mobile"]
 })
 
 module.exports = exportConfig

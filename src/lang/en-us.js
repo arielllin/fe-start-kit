@@ -1,7 +1,9 @@
+import about from './modules/about'
+
 export default {
   home: {
-    footer: {
-      home: 'home'
-    }
-  }
+    title: 'test',
+    international: 'international'
+  },
+  about
 }

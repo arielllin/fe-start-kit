@@ -28,6 +28,11 @@ cd server
 npm run start
 ```
 
+### Storybook ( port 6006 )
+```
+npm run storybook:serve
+```
+
 ## Auto generator (PLOP)
 - First of all, If you want to use this feature, you should install plop.js in your environment globally:
 
