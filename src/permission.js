@@ -1,10 +1,9 @@
 import router from './router'
-import store from './store'
+// import store from './store'
+// import { getLoginStatus } from '@/utils/auth' // getToken from cookie
+// import { whiteList } from '@/utils/constant'
 
-import { getLoginStatus } from '@/utils/auth' // getToken from cookie
-
-import { whiteList } from '@/utils/constant'
-
+// 白名單設定在此
 router.beforeEach((to, from, next) => {
   next()
   // if (getLoginStatus() === 'true') {
@@ -30,4 +29,5 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach((to, from) => {
+  // Do something with router hook
 })

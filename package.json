@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "lint": "cross-env ENV_CONFIG=production vue-cli-service lint",
-    "build:prod": "cross-env ENV_CONFIG=production vue-cli-service build",
     "dev": "cross-env ENV_CONFIG=develop vue-cli-service serve",
+    "build:prod": "cross-env ENV_CONFIG=production vue-cli-service build",
     "inspect:dev": "cross-env ENV_CONFIG=develop vue-cli-service inspect > ./build/inspect.webpack.dev.js",
     "inspect:prod": "cross-env ENV_CONFIG=production vue-cli-service inspect --mode production > ./build/inspect.webpack.prod.js",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
