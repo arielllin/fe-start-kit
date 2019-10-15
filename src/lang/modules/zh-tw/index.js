@@ -1,4 +1,4 @@
-import about from './modules/about'
+import about from './about'
 
 export default {
   home: {

@@ -1,8 +1,8 @@
 export const cookieKeys = {
-  ExpireInKey: 'MXFE-Expire-In',
+  ExpireInKey: 'FE-Expire-In',
   LanguageKey: 'Accept-Language',
-  LoginStatusKey: 'MXFE-Login',
-  TokenKey: 'MXFE-Token'
+  LoginStatusKey: 'FE-Login',
+  TokenKey: 'FE-Token'
 }
 
 // 不用登入的白名單

@@ -4,6 +4,7 @@
 |-- root
     |-- .eslintrc.js
     |-- .gitignore
+    |-- plopfile.js (plop預置元件腳本起始點)
     |-- README.md
     |-- babel.config.js
     |-- package-lock.json
@@ -16,8 +17,14 @@
     |   |-- ...
     |
     |-- config (環境客製化參數)
+    |   |-- storybook (StoryBook 環境設定不用調整)
+    |       |-- ...
+    | 
     |   |-- develop.env.js
     |   |-- production.env.js
+    |   |-- ...
+    |
+    |-- plop (plop預置元件 template 藍圖腳本)
     |   |-- ...
     |
     |-- public
@@ -83,6 +90,9 @@
         |       |-- app.js
         |       |-- login.js
         |       |-- ...
+        |
+        |-- stories (StoryBook 目錄管理)
+        |   |-- index.stories.js
         |
         |-- utils (工具類)
         |   |-- auth.js
