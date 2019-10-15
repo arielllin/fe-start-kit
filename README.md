@@ -1,6 +1,6 @@
 # mxfe-start-kit (with mock server)
 
-資料夾結構檔案請參考 [directoryList.md](http://gitlab.mxnfe.com/tutorials/mxfe-start-kit/blob/master/directoryList.md)
+資料夾結構檔案請參考 [directoryList.md](directoryList.md)
 
 ## Project setup
 ```
