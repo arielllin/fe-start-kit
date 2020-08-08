@@ -1,10 +1,13 @@
 import { scrollTestRequest as request } from '@/utils/http'
 
-export function feeds({ page }) {
+export function feeds({ tags, page }) {
   return request({
-    url: '/api/v1/search_by_date?tags=story',
+    url: '/api/v1/search_by_date',
     method: 'get',
-    params: { page: page }
+    params: {
+      tags: tags,
+      page: page
+    }
   })
 }
 

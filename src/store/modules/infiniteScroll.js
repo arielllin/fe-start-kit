@@ -3,18 +3,18 @@ import { feeds } from '@/api/infiniteScroll'
 const scroll = {
   namespaced: true,
   state: {
-    feeds: []
+    // feeds: []
   },
   mutations: {
-    SET_NEWS_FEEDS: (state, feeds) => {
-      state.feeds = feeds
-    }
+    // SET_NEWS_FEEDS: (state, feeds) => {
+    //   state.feeds = feeds
+    // }
   },
   actions: {
-    async GetNewsFeeds({ commit }, { page }) {
+    async GetNewsFeeds({ commit }, { page, tags }) {
       try {
-        const data = await feeds({ page })
-        commit('SET_NEWS_FEEDS', data)
+        const data = await feeds({ page, tags })
+        // commit('SET_NEWS_FEEDS', data)
         return data
       } catch (error) {
         console.log(error)

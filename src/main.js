@@ -13,6 +13,11 @@ import InfiniteLoading from 'vue-infinite-loading'
 
 Vue.use(InfiniteLoading, { /* options */ })
 
+import Vant from 'vant'
+import 'vant/lib/index.css'
+
+Vue.use(Vant)
+
 new Vue({
   store,
   router,
