@@ -32,6 +32,18 @@ export default {
   },
   computed: {
     ...mapGetters(['appTest'])
+  },
+  created() {
+    this.test()
+  },
+  methods: {
+    test() {
+      const a = new Set([1, 2, 2, 2, 3, 49, 20983, 993, 9, 5])
+      console.log(a)
+      a.forEach((x, idx) => {
+        console.log('idx', idx, x)
+      })
+    }
   }
 }
 </script>

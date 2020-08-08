@@ -8,7 +8,8 @@ import about from './modules/about'
 import help from './modules/help'
 import home from './modules/home'
 import login from './modules/login'
+import infiniteScroll from './modules/infiniteScroll'
 
 export default new Router({
-  routes: [page404, about, help, home, login]
+  routes: [page404, about, help, home, login, infiniteScroll]
 })

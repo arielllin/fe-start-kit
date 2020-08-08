@@ -9,18 +9,24 @@ module.exports = {
     host: '0.0.0.0',
     port: 9797,
     https: false,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
+    },
     open: true,
     hotOnly: true,
-    proxy: 'http://localhost:3889'
-    // proxy: {
-    //   '/': {
-    //     target: 'http://some.api-server.com',
-    //     changeOrigin: true
-    //   },
-    //   '/another-api': {
-    //     target: 'http://some.api-server.com',
-    //     changeOrigin: true
-    //   },
-    // }
+    proxy: {
+      '/mock': {
+        target: 'http://localhost:3889',
+        changeOrigin: true
+      },
+      '/scroll/*': {
+        target: 'http://hn.algolia.com',
+        changeOrigin: true,
+        pathRewrite: { '^/scroll': '' },
+        secure: false
+      }
+    }
   }
 }

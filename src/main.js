@@ -9,6 +9,10 @@ import './permission' // permission control
 
 Vue.config.productionTip = false
 
+import InfiniteLoading from 'vue-infinite-loading'
+
+Vue.use(InfiniteLoading, { /* options */ })
+
 new Vue({
   store,
   router,
