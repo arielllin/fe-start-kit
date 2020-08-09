@@ -11,10 +11,10 @@ const scroll = {
     // }
   },
   actions: {
-    async GetNewsFeeds({ commit }, { page, tags }) {
+    async GetNewsFeeds({ commit }, { page, tags, startDate, endDate }) {
       try {
-        const data = await feeds({ page, tags })
-        // commit('SET_NEWS_FEEDS', data)
+        const data = await feeds({ page, tags, startDate, endDate })
+        // console.log('GetNewsFeeds', data)
         return data
       } catch (error) {
         console.log(error)
